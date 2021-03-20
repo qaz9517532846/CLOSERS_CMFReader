@@ -7,3 +7,11 @@
   - 2019 C# Windows Form and .Net Framework 4.8 under Windows 10.
 
 - [Download](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver) CLOSERS_CMFReader.
+
+- Open CLOSERS_CMFReader.exe.
+
+- Click "Read CMF" button read more than one CMF files.
+
+- Click "Output" button will unpack to distination path after reading CMF files.
+
+- Click "clear" button will Clear readed CMF files.
