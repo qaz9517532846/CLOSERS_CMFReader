@@ -4,7 +4,7 @@
 
 - 軟體需求 (程式編輯):
 
-  - 2019 C# Windows Form 以及 .Net Framework 4.8 (作業系統:Windows 10).
+  - Visual studio 2019 C# Windows Form 以及 .Net Framework 4.8 (作業系統:Windows 10).
 
 - [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver) CLOSERS_CMFReader.
 
