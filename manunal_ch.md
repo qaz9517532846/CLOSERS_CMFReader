@@ -8,7 +8,7 @@
 
 ### 遊戲載點
 
-- [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver) CLOSERS_CMFReader.
+- [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver)
 
 ### 使用方式
 
