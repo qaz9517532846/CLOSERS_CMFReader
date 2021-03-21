@@ -6,7 +6,7 @@
 
   - Visual studio 2019 C# Windows Form 以及 .Net Framework 4.8 (作業系統:Windows 10).
 
-### 遊戲載點
+### 執行檔載點
 
 - [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver)
 
