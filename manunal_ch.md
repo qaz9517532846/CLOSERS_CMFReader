@@ -6,7 +6,11 @@
 
   - Visual studio 2019 C# Windows Form 以及 .Net Framework 4.8 (作業系統:Windows 10).
 
+### 遊戲載點
+
 - [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver) CLOSERS_CMFReader.
+
+### 使用方式
 
 - 打開 CLOSERS_CMFReader.exe.
 
@@ -22,7 +26,7 @@
 
 - 按下 "Read CMF" 按鈕將先前讀取的CMF檔案全數清除.
 
-- 資料來源:
+### 資料來源:
 
   - Leayal/Closers-CMF. https://github.com/Leayal/Closers-CMF
 
