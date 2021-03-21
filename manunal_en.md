@@ -6,7 +6,11 @@
 
   - Visual studio 2019 C# Windows Form and .Net Framework 4.8 under Windows 10.
 
+### Download CLOSERS_CMFReader
+
 - [Download](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver) CLOSERS_CMFReader.
+
+### How to use CLOSERS_CMFReader
 
 - Open CLOSERS_CMFReader.exe.
 
@@ -22,7 +26,7 @@
 
 - Click "clear" button will Clear readed CMF files.
 
-- Reference:
+### Reference:
 
   - Leayal/Closers-CMF. https://github.com/Leayal/Closers-CMF
 
