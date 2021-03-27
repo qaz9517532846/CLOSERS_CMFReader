@@ -26,6 +26,8 @@
 
 - Click "clear" button will Clear readed CMF files.
 
+- Click "Record" button to unpacked record of CMF file save to the document text file.
+
 ### Reference:
 
   - Leayal/Closers-CMF. https://github.com/Leayal/Closers-CMF
