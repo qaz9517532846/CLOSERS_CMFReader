@@ -26,6 +26,8 @@
 
 - 按下 "Read CMF" 按鈕將先前讀取的CMF檔案全數清除.
 
+- 按下 "Record" 按鈕將拆解CMF的檔案結果儲存至txt文件檔.
+
 ### 資料來源:
 
   - Leayal/Closers-CMF. https://github.com/Leayal/Closers-CMF
