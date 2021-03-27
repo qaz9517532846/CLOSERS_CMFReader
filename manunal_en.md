@@ -14,7 +14,7 @@
 
 - Open CLOSERS_CMFReader.exe.
 
-![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/CLOSERS_CMFReader.png)
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/CLOSERS_CMFReader_v2.png)
 
 - Click "Read CMF" button read more than one CMF files.
 
