@@ -8,7 +8,7 @@
 
 ### 執行檔載點
 
-- [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/trade_ver)
+- [執行檔載點](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/v2)
 
 ### 使用方式
 
