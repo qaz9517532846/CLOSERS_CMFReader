@@ -39,9 +39,6 @@
             this.Byte = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UnpackedSaveFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Processing_text = new System.Windows.Forms.Label();
             this.record_btn = new System.Windows.Forms.Button();
             this.saveRecordDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
@@ -139,35 +136,6 @@
             this.Type.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Type.Width = 100;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(583, 70);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(375, 34);
-            this.progressBar1.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(579, 35);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(116, 22);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Processing：";
-            // 
-            // Processing_text
-            // 
-            this.Processing_text.AutoSize = true;
-            this.Processing_text.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Processing_text.Location = new System.Drawing.Point(701, 35);
-            this.Processing_text.Name = "Processing_text";
-            this.Processing_text.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Processing_text.Size = new System.Drawing.Size(28, 22);
-            this.Processing_text.TabIndex = 12;
-            this.Processing_text.Text = "??";
-            // 
             // record_btn
             // 
             this.record_btn.Enabled = false;
@@ -190,9 +158,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(970, 566);
             this.Controls.Add(this.record_btn);
-            this.Controls.Add(this.Processing_text);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.resultview);
             this.Controls.Add(this.Output_btn);
             this.Controls.Add(this.Clear_btn);
@@ -226,9 +191,6 @@
         private System.Windows.Forms.ColumnHeader Byte;
         private System.Windows.Forms.ColumnHeader Type;
         private System.Windows.Forms.FolderBrowserDialog UnpackedSaveFolder;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Processing_text;
         private System.Windows.Forms.Button record_btn;
         private System.Windows.Forms.SaveFileDialog saveRecordDialog;
     }

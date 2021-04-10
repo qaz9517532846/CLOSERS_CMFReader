@@ -38,24 +38,17 @@ namespace CLOSERS_CMFReader
             ReadCMF.Multiselect = true;
             if (ReadCMF.ShowDialog() == DialogResult.OK)
             {
-                double read_process = 0;
-                progressBar1.Visible = true;
-                progressBar1.Minimum = 0;
-                progressBar1.Maximum = 100;
-                progressBar1.Value = 0;
-                progressBar1.Step = 100 / ReadCMF.FileNames.Length;
+                progressbar progress_win = new progressbar(ReadCMF.FileNames.Length);
+                progress_win.Show();
                 foreach (string strFilename in ReadCMF.FileNames)
                 {
-                    read_process += 100 / ReadCMF.FileNames.Length;
-                    Processing_text.Text = "Reading CMF files processing.";
                     CMF_files.Add(strFilename);
                     Unpacking_file = strFilename;
                     OpenArchive(strFilename);
-                    System.Threading.Thread.Sleep(100);
-                    progressBar1.PerformStep();
+                    progress_win.progress_Finish("Reading CMF File.");
+                    System.Threading.Thread.Sleep(10);
                 }
-                Processing_text.Text = "Reading CMF files process finish.";
-                progressBar1.Visible = false;
+                progress_win.Close();
             }
         }
 
@@ -121,16 +114,10 @@ namespace CLOSERS_CMFReader
         {
             FolderBrowserDialog UnpackedSaveFolder = new FolderBrowserDialog();
             UnpackedSaveFolder.ShowDialog();
-            double read_process = 0;
-            progressBar1.Visible = true;
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 100;
-            progressBar1.Value = 0;
-            progressBar1.Step = 100 / CMF_files.Count;
+            progressbar progress_win = new progressbar(CMF_files.Count + 1);
+            progress_win.Show();
             foreach (string output_file in CMF_files)
             {
-                read_process += 100 / CMF_files.Count;
-                Processing_text.Text = "Unpacking CMF files processing.";
                 CloseArchive();
                 archive = new CMFFile(output_file);
                 archive.Closed += Archive_Closed;
@@ -140,12 +127,10 @@ namespace CLOSERS_CMFReader
                 {
                     archive.ExtractEntry(archive.Entries[i], UnpackedSaveFolder.SelectedPath + "/" + new Classes.File(archive.Entries[i]).Name);
                 }
-
-                System.Threading.Thread.Sleep(100);
-                progressBar1.PerformStep();
+                System.Threading.Thread.Sleep(10);
+                progress_win.progress_Finish("Unpacking output CMF File.");
             }
-            Processing_text.Text = "Unpacked CMF files process finish.";
-            progressBar1.Visible = false;
+            progress_win.Close();
         }
 
         public void extractArchive(string destination)
