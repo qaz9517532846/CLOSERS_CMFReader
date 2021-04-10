@@ -8,7 +8,7 @@
 
 ### Download CLOSERS_CMFReader
 
-- [CLOSERS_CMFReader](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases/tag/v2)
+- [CLOSERS_CMFReader](https://github.com/qaz9517532846/CLOSERS_CMFReader/releases)
 
 ### How to use CLOSERS_CMFReader
 
