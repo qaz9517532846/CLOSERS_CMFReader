@@ -14,11 +14,11 @@
 
 - Open CLOSERS_CMFReader.exe.
 
-![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/CLOSERS_CMFReader_v2.png)
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Seulbi/image/CLOSERS_CMFReader.png)
 
 - Click "Read CMF" button read more than one CMF files.
 
-![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/read_cmf.png)
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Seulbi/image/read_cmf.png)
 
 - Click "Output" button will unpack to distination path after reading CMF files.
 
