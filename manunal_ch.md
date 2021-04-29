@@ -20,13 +20,13 @@
 
 ![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Seulbi/image/read_cmf.png)
 
-- 按下 "Read CMF" 按鈕讀取一個以上的CMF檔案後將拆包至指定資料夾.
+- 按下 "Unpack CMF" 按鈕讀取一個以上的CMF檔案後將拆包至指定資料夾.
 
 ![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/result.png)
 
-- 按下 "Read CMF" 按鈕將先前讀取的CMF檔案全數清除.
+- 按下 "Clear" 按鈕將先前讀取的CMF檔案全數清除.
 
-- 按下 "Record" 按鈕將拆解CMF的檔案結果儲存至txt文件檔.
+- 按下 "Unpack record output" 按鈕將拆解CMF的檔案結果儲存至txt文件檔.
 
 ### 資料來源:
 
