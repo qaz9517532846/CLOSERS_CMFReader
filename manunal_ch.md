@@ -14,11 +14,11 @@
 
 - 打開 CLOSERS_CMFReader.exe.
 
-![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/CLOSERS_CMFReader_v2.png)
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Seulbi/image/CLOSERS_CMFReader.png)
 
 - 按下 "Read CMF" 按鈕讀取一個以上的CMF檔案.
 
-![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/main/image/read_cmf.png)
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Seulbi/image/read_cmf.png)
 
 - 按下 "Read CMF" 按鈕讀取一個以上的CMF檔案後將拆包至指定資料夾.
 
