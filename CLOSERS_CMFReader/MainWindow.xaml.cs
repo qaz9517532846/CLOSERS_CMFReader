@@ -43,7 +43,7 @@ namespace CLOSERS_CMFReader
         {
             motion = "Unpacking";
             archive = null;
-            ShowOutputWin OutputWindows = new ShowOutputWin(motion, CMF_files, items.Count);
+            ShowOutputWin OutputWindows = new ShowOutputWin(motion, CMF_files, CMF_files.Count);
             OutputWindows.Show();
             /*
             if (CMFListView.SelectedItems.Count > 0)
