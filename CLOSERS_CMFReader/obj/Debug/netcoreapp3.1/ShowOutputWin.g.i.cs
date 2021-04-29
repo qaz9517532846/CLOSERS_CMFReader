@@ -141,7 +141,7 @@ namespace CLOSERS_CMFReader {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CLOSERS_CMFReader;component/showoutputwin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CLOSERS_CMFReader;V1.0.0.0;component/showoutputwin.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ShowOutputWin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

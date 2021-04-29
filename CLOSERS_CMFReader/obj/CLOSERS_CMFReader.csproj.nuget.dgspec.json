@@ -1,27 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj": {}
+    "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj": {
+    "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj",
         "projectName": "CMF-Sharp",
-        "projectPath": "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj"
+        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj"
       },
       "frameworks": {
         "net40-client": {}
       }
     },
-    "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj": {
+    "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj",
         "projectName": "CLOSERS_CMFReader",
-        "projectPath": "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj",
+        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\CLOSERS_CMFReader.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\CLOSERS_CMFReader\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,8 +37,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj"
+              "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj": {
+                "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\CLOSERS_CMFReader\\Closers-CMF\\CMF-Sharp\\CMF-Sharp.csproj"
               }
             }
           }
