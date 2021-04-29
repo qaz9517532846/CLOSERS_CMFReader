@@ -71,7 +71,6 @@ namespace CLOSERS_CMFReader
             {
                 foreach (string output_file in Unpack_file)
                 {
-                    archive = null;
                     archive = new CMFFile(output_file);
                     archive.Closed += Archive_Closed;
                     archive.BeginRead();
