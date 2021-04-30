@@ -26,7 +26,7 @@
 
 - Click "clear" button will Clear readed CMF files.
 
-- Click "Record" button to unpacked record of CMF file save to the document text file.
+- Click "Unpacked Record output" button to unpacked record of CMF file save to the document text file.
 
 ### Reference:
 
