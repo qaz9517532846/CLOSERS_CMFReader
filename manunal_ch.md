@@ -28,6 +28,20 @@
 
 - 按下 "Unpack record output" 按鈕將拆解CMF的檔案結果儲存至txt文件檔.
 
+### 新增可選特定的檔案拆解至指定的路徑
+
+- 選擇一個以上指定檔案.
+
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Yuri/image/CLOSERS_CMFReader_SelectItem.png)
+
+- 將選擇檔案拆解至指定路徑.
+
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Yuri/image/CLOSERS_Unpack_SelectItem.png)
+
+- 拆解結果
+
+![image](https://github.com/qaz9517532846/CLOSERS_CMFReader/blob/Yuri/image/result_selectitem.png)
+
 ### 資料來源:
 
   - Leayal/Closers-CMF. https://github.com/Leayal/Closers-CMF
