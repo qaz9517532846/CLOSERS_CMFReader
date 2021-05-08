@@ -1,0 +1,52 @@
+﻿<Window x:Name="OutputWindows" x:Class="CLOSERS_CMFReader.ShowOutputWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CLOSERS_CMFReader"
+        mc:Ignorable="d"
+        Title="Output Windows" Height="350" Width="550" MinWidth="550" MinHeight="350" MaxWidth="550" MaxHeight="350">
+    <Grid Margin="-154,0,-152,-15" MinWidth="550" MinHeight="350" MaxWidth="550" MaxHeight="350" Height="350" VerticalAlignment="Bottom">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFFFB8" Offset="1"/>
+                <GradientStop Color="#FFFFB8C6" Offset="0"/>
+                <GradientStop Color="#FFE7E8EC" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="226*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="TermLable" Content="Unpack/Pack Output" Margin="16,27,23,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" Grid.ColumnSpan="2"/>
+        <Label Content="Path Destination：" HorizontalAlignment="Left" Margin="34,80,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBox x:Name="PathTextbox" HorizontalAlignment="Left" Margin="154,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontFamily="Times New Roman" FontSize="14" Height="26" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.256"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="Browse_btn" Content="Browse..." HorizontalAlignment="Left" Margin="125,78,0,0" VerticalAlignment="Top" Width="88" Grid.Column="2" Height="26" Click="Browse_btn_Click"/>
+        <Label x:Name="BrowseLable" Content="Browse：" HorizontalAlignment="Left" Margin="17,53,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
+        <Button x:Name="Cancle_btn" Content="Cancle" HorizontalAlignment="Left" Margin="43,297,0,0" VerticalAlignment="Top" Width="100" Height="26" FontFamily="Times New Roman" FontSize="14" Click="Cancle_btn_Click"/>
+        <Button x:Name="OK_btn" Content="OK" HorizontalAlignment="Left" Margin="151,296,0,0" Width="100" FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2" Height="26" VerticalAlignment="Top" Click="OK_btn_Click"/>
+        <Label x:Name="Processed_Lable" Content="Processed：" HorizontalAlignment="Left" Margin="17,113,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
+        <Button x:Name="Close_btn" Content="Close" HorizontalAlignment="Left" Margin="48,295,0,0" VerticalAlignment="Top" Width="100" Height="26" FontFamily="Times New Roman" Grid.ColumnSpan="2" FontSize="14" Grid.Column="1" Click="Close_btn_Click"/>
+        <Label Content="Processing：" HorizontalAlignment="Left" Margin="36,142,0,0" VerticalAlignment="Top" Width="329" Grid.ColumnSpan="3" FontFamily="Times New Roman" FontSize="14"/>
+        <ProgressBar x:Name="progressbar_motion" HorizontalAlignment="Left" Height="24" Margin="40,170,0,0" VerticalAlignment="Top" Width="318" Grid.ColumnSpan="3"/>
+        <RichTextBox x:Name="ShowProcessingText" Margin="42,200,191,64" Grid.ColumnSpan="3" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="220" Margin="38,110,0,0" VerticalAlignment="Top" Width="213" Source="/Background2.PNG"/>
+
+    </Grid>
+</Window>

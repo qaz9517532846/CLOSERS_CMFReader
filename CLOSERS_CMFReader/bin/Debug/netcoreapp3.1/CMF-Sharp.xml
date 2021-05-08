@@ -1,0 +1,1566 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMF-Sharp</name>
+    </assembly>
+    <members>
+        <member name="T:Leayal.Closers.CMF.CMFArchive">
+            <summary>
+            Provide interaction with the Closers's CMF file
+            </summary>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.Open(System.String)">
+            <summary>
+            Open CMF file to edit.
+            </summary>
+            <param name="cmfFile">Path to the CMF file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.Read(System.String)">
+            <summary>
+            Open CMF file to read.
+            </summary>
+            <param name="cmfFile">Path to the CMF file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.Read(System.IO.Stream)">
+            <summary>
+            Read CMF file from stream.
+            </summary>
+            <param name="stream">Content Stream</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.Read(System.IO.Stream,System.Boolean)">
+            <summary>
+            Read CMF file from stream.
+            </summary>
+            <param name="stream">Content Stream</param>
+            <param name="leaveOpen">Determine if the stream will be closed when <see cref="T:Leayal.Closers.CMF.CMFArchive"/> is closed.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFArchive.BaseStream">
+            <summary>
+            The base stream which this archive instance used to open CMF file.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFArchive.FileCount">
+            <summary>
+            Return the number of entries in the CMF Archive.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFArchive.Entries">
+            <summary>
+            Return the list of entry in the CMF archive.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFArchive.Item(System.Int32)">
+            <summary>
+            Return the <seealso cref="T:Leayal.Closers.CMF.CMFEntry"/> at the specific index.
+            </summary>
+            <param name="index">The index of the entry</param>
+            <returns></returns>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFArchive.Item(System.String)">
+            <summary>
+            Return the <seealso cref="T:Leayal.Closers.CMF.CMFEntry"/> which match the given full-path inside the archive. Return null if no entry matches.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.ExtractAllEntries">
+            <summary>
+            Return the progressive reader of the CMF Archive.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.ExtractAllEntries(System.String)">
+            <summary>
+            Extract the CMF file to the destination folder
+            </summary>
+            <param name="outputFolder">Destination folder</param>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.ExtractAllEntries(System.String,System.ComponentModel.ProgressChangedEventHandler)">
+            <summary>
+            Extract the CMF file to the destination folder
+            </summary>
+            <param name="outputFolder">Destination folder</param>
+            <param name="progressChangedCallback">The progress callback handler</param>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.ExtractEntry(Leayal.Closers.CMF.CMFEntry,System.String)">
+            <summary>
+            Decompress the entry to a destination path.
+            </summary>
+            <param name="entry">The entry which will be decompressed</param>
+            <param name="filepath">Destination of the file</param>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.ExtractEntry(Leayal.Closers.CMF.CMFEntry,System.IO.Stream)">
+            <summary>
+            Decompress the entry to a stream.
+            </summary>
+            <param name="entry">The entry which will be decompressed</param>
+            <param name="outStream">The output stream</param>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.OpenEditor">
+            <summary>
+            Create the archive editor for the current CMF Archive instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.OpenEditor(System.String)">
+            <summary>
+            Create the archive editor for the current CMF Archive instance.
+            </summary>
+            <param name="temporaryFolder">The directory for temporary files</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.OpenEditor(System.String,Leayal.Closers.CMF.CompressionLevel)">
+            <summary>
+            Create the archive editor with the given CompressionLevel for the current CMF Archive instance.
+            </summary>
+            <param name="compressionLevel">The compression level that the editor will use to compress data</param>
+            <param name="temporaryFolder">The directory for temporary files</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.CMFArchive.Dispose">
+            <summary>
+            Close the CMF archive.
+            </summary>
+        </member>
+        <member name="T:Leayal.Closers.CMF.CMFEntry">
+            <summary>
+            Provide information of the entry.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFEntry.IsCompressed">
+            <summary>
+            Determine if the entry's content is compressed or not.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFEntry.IsEncrypted">
+            <summary>
+            Determine if the entry's content is encrypted or not.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFEntry.FileName">
+            <summary>
+            Entry's filename
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFEntry.CompressedSize">
+            <summary>
+            Get the size of entry's compressed content inside CMF file.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.CMFEntry.UnpackedSize">
+            <summary>
+            Get the real size of entry's content before compressing.
+            </summary>
+        </member>
+        <member name="T:Leayal.Closers.CMF.IEditor">
+            <summary>
+            Provide methods to edit the CMF file content. (Not thread-safe)
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.IEditor.TemporaryFolder">
+            <summary>
+            Get the path to the directory which contains temporary files for writing CMF operation.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.IEditor.IsSaving">
+            <summary>
+            Determine if the <seealso cref="T:Leayal.Closers.CMF.IEditor"/> is writing to output file.
+            </summary>
+        </member>
+        <member name="P:Leayal.Closers.CMF.IEditor.CompressionLevel">
+            <summary>
+            Get the compression level of the editor.
+            </summary>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetData(System.Int32,System.Byte[])">
+            <summary>
+            Set new data for the entry at given index.
+            </summary>
+            <param name="entryIndex">The index of the entry</param>
+            <param name="data">The new data of the entry</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetData(System.String,System.Byte[])">
+            <summary>
+            Set new data for the entry which matches the given entry path. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entryPath">The path point to an entry</param>
+            <param name="data">The new data of the entry</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetData(Leayal.Closers.CMF.CMFEntry,System.Byte[])">
+            <summary>
+            Set new data for the entry which matches the given entry. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entry">The entry info</param>
+            <param name="data">The new data of the entry</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetDataSource(System.Int32,System.IO.Stream)">
+            <summary>
+            Set new data from a stream for the entry at given index.
+            </summary>
+            <param name="entryIndex">The index of the entry</param>
+            <param name="data">The stream of the source data. The stream must be opening until <seealso cref="M:Leayal.Closers.CMF.IEditor.Save"/> is called.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetDataSource(System.String,System.IO.Stream)">
+            <summary>
+            Set new data from a stream for the entry which matches the given entry path. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entryPath">The path point to an entry.</param>
+            <param name="data">The stream of the source data. The stream must be opening until <seealso cref="M:Leayal.Closers.CMF.IEditor.Save"/> is called.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetDataSource(Leayal.Closers.CMF.CMFEntry,System.IO.Stream)">
+            <summary>
+            Set new data from a stream for the entry which matches the given entry. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entry">The entry info</param>
+            <param name="data">The stream of the source data. The stream must be opening until <seealso cref="M:Leayal.Closers.CMF.IEditor.Save"/> is called.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetString(System.Int32,System.String)">
+            <summary>
+            Set new string data from a stream for the entry at given index.
+            </summary>
+            <param name="entryIndex">The index of the entry</param>
+            <param name="data">The new string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetString(System.String,System.String)">
+            <summary>
+            Set new string data from a stream for the entry which matches the given entry path. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entryPath">The path point to an entry</param>
+            <param name="data">The new string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetString(Leayal.Closers.CMF.CMFEntry,System.String)">
+            <summary>
+            Set new string data from a stream for the entry which matches the given entry. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entry">The entry info</param>
+            <param name="data">The new string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetString(System.Int32,System.String,System.Text.Encoding)">
+            <summary>
+            Set new string data from a stream for the entry at given index.
+            </summary>
+            <param name="entryIndex">The index of the entry</param>
+            <param name="data">The new string data</param>
+            <param name="encoding">The encoding used to encode the new string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Set new string data from a stream for the entry which matches the given entry path. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entryPath">The path point to an entry</param>
+            <param name="data">The new string data</param>
+            <param name="encoding">The encoding used to encode the new string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.SetString(Leayal.Closers.CMF.CMFEntry,System.String,System.Text.Encoding)">
+            <summary>
+            Set new string data from a stream for the entry which matches the given entry. Return True if the entry is found, otherwise False.
+            </summary>
+            <param name="entry">The entry info</param>
+            <param name="data">The new string data</param>
+            <param name="encoding">The encoding used to encode the new string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.Save">
+            <summary>
+            Save the modified data to the current archive.
+            </summary>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.WriteTo(System.String)">
+            <summary>
+            Write the whole CMF archive with modified datas to a new file.
+            </summary>
+            <param name="filepath">The path to the file</param>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IEditor.WriteTo(System.IO.Stream)">
+            <summary>
+            Write the whole CMF archive with modified datas to a stream.
+            </summary>
+            <param name="outStream">The destination stream</param>
+        </member>
+        <member name="T:Leayal.Closers.CMF.CompressionLevel">
+            <summary>
+            The compression level to be used when using a DeflateStream or ZlibStream with CompressionMode.Compress.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.None">
+            <summary>
+            None means that the data will be simply stored, with no change at all.
+            If you are producing ZIPs for use on Mac OSX, be aware that archives produced with CompressionLevel.None
+            cannot be opened with the default zip reader. Use a different CompressionLevel.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level0">
+            <summary>
+            Same as None.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.BestSpeed">
+            <summary>
+            The fastest but least effective compression.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level1">
+            <summary>
+            A synonym for BestSpeed.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level2">
+            <summary>
+            A little slower, but better, than level 1.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level3">
+            <summary>
+            A little slower, but better, than level 2.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level4">
+            <summary>
+            A little slower, but better, than level 3.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level5">
+            <summary>
+            A little slower than level 4, but with better compression.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Default">
+            <summary>
+            The default compression level, with a good balance of speed and compression efficiency.   
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level6">
+            <summary>
+            A synonym for Default.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level7">
+            <summary>
+            Pretty good compression!
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level8">
+            <summary>
+             Better compression than Level7!
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.BestCompression">
+            <summary>
+            The "best" compression, where best means greatest reduction in size of the input data stream. 
+            This is also the slowest compression.
+            </summary>
+        </member>
+        <member name="F:Leayal.Closers.CMF.CompressionLevel.Level9">
+            <summary>
+            A synonym for BestCompression.
+            </summary>
+        </member>
+        <member name="T:Leayal.Closers.CMF.IReader">
+            <summary>
+            Provide progressive interaction with archive's entries.
+            </summary>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IReader.MoveToNextEntry">
+            <summary>
+            Move to the next entry. Return True if on success, otherwise False if there is no entry left.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IReader.OpenEntryStream">
+            <summary>
+            Open a stream to read entry.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IReader.WriteEntryTo(System.IO.Stream)">
+            <summary>
+            Write the entry's content to a stream.
+            </summary>
+            <param name="outStream">Destination stream</param>
+        </member>
+        <member name="M:Leayal.Closers.CMF.IReader.WriteEntryTo(System.String)">
+            <summary>
+            Write the entry's content to a file.
+            </summary>
+            <param name="filepath">Destination file</param>
+        </member>
+        <member name="P:Leayal.Closers.CMF.IReader.Entry">
+            <summary>
+            Current entry info.
+            </summary>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.CRC32">
+            <summary>
+            Calculates a 32bit Cyclic Redundancy Checksum (CRC) using the same polynomial
+            used by Zip. This type is used internally by DotNetZip; it is generally not used
+            directly by applications wishing to create, read, or manipulate zip archive
+            files.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.CRC32.TotalBytesRead">
+            <summary>
+            indicates the total number of bytes read on the CRC stream.
+            This is used when writing the ZipDirEntry when compressing files.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.CRC32.Crc32Result">
+            <summary>
+            Indicates the current CRC for all blocks slurped in.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.CRC32.GetCrc32(System.IO.Stream)">
+            <summary>
+            Returns the CRC32 for the specified stream.
+            </summary>
+            <param name="input">The stream over which to calculate the CRC32</param>
+            <returns>the CRC32 calculation</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.CRC32.GetCrc32AndCopy(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Returns the CRC32 for the specified stream, and writes the input into the
+            output stream.
+            </summary>
+            <param name="input">The stream over which to calculate the CRC32</param>
+            <param name="output">The stream into which to deflate the input</param>
+            <returns>the CRC32 calculation</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.CRC32.ComputeCrc32(System.Int32,System.Byte)">
+            <summary>
+            Get the CRC32 for the given (word,byte) combo.  This is a computation
+            defined by PKzip.
+            </summary>
+            <param name="W">The word to start with.</param>
+            <param name="B">The byte to combine it with.</param>
+            <returns>The CRC-ized result.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.CRC32.SlurpBlock(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Update the value for the running CRC32 using the given block of bytes.
+            This is useful when using the CRC32() class in a Stream.
+            </summary>
+            <param name="block">block of bytes to slurp</param>
+            <param name="offset">starting point in the block</param>
+            <param name="count">how many bytes within the block to slurp</param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.CRC32.Combine(System.Int32,System.Int32)">
+            <summary>
+            Combines the given CRC32 value with the current running total.
+            </summary>
+            <remarks>
+            This is useful when using a divide-and-conquer approach to calculating a CRC.
+            Multiple threads can each calculate a CRC32 on a segment of the data, and then
+            combine the individual CRC32 values at the end.
+            </remarks>
+            <param name="crc">the crc value to be combined with this one</param>
+            <param name="length">the length of data the CRC value was calculated on</param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateManager.Tree.DistanceCode(System.Int32)">
+            <summary>
+            Map from a distance to a distance code.
+            </summary>
+            <remarks> 
+            No side effects. _dist_code[256] and _dist_code[257] are never used.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.FlushMode">
+            <summary>
+            This property sets the flush behavior on the stream.
+            </summary>
+            <remarks> See the ZLIB documentation for the meaning of the flush behavior.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.BufferSize">
+             <summary>
+               The size of the working buffer for the compression codec.
+             </summary>
+            
+             <remarks>
+             <para>
+               The working buffer is used for all stream operations.  The default size is
+               1024 bytes.  The minimum size is 128 bytes. You may get better performance
+               with a larger buffer.  Then again, you might not.  You would have to test
+               it.
+             </para>
+            
+             <para>
+               Set this before the first call to <c>Read()</c> or <c>Write()</c> on the
+               stream. If you try to set it afterwards, it will throw.
+             </para>
+             </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.Strategy">
+             <summary>
+               The ZLIB strategy to be used during compression.
+             </summary>
+            
+             <remarks>
+               By tweaking this parameter, you may be able to optimize the compression for
+               data with particular characteristics.
+             </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.TotalIn">
+            <summary> Returns the total number of bytes input so far.</summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.TotalOut">
+            <summary> Returns the total number of bytes output so far.</summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.CanRead">
+            <summary>
+            Indicates whether the stream can be read.
+            </summary>
+            <remarks>
+            The return value depends on whether the captive stream supports reading.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.CanSeek">
+            <summary>
+            Indicates whether the stream supports Seek operations.
+            </summary>
+            <remarks>
+            Always returns false.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.CanWrite">
+            <summary>
+            Indicates whether the stream can be written.
+            </summary>
+            <remarks>
+            The return value depends on whether the captive stream supports writing.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.Length">
+            <summary>
+            Reading this property always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.DeflateStream.Position">
+             <summary>
+             The position of the stream pointer.
+             </summary>
+            
+             <remarks>
+               Setting this property always throws a <see
+               cref="T:System.NotImplementedException"/>. Reading will return the total bytes
+               written out, if used in writing, or the total bytes read in, if used in
+               reading.  The count may refer to compressed bytes or uncompressed bytes,
+               depending on how you've used the stream.
+             </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateStream.Dispose(System.Boolean)">
+            <summary>
+            Dispose the stream.
+            </summary>
+            <remarks>
+            This may or may not result in a <c>Close()</c> call on the captive stream.
+            See the constructors that have a <c>leaveOpen</c> parameter for more information.
+            </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateStream.Flush">
+            <summary>
+            Flush the stream.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+             Read data from the stream.
+             </summary>
+             <remarks>
+            
+             <para>
+               If you wish to use the <c>DeflateStream</c> to compress data while
+               reading, you can create a <c>DeflateStream</c> with
+               <c>CompressionMode.Compress</c>, providing an uncompressed data stream.
+               Then call Read() on that <c>DeflateStream</c>, and the data read will be
+               compressed as you read.  If you wish to use the <c>DeflateStream</c> to
+               decompress data while reading, you can create a <c>DeflateStream</c> with
+               <c>CompressionMode.Decompress</c>, providing a readable compressed data
+               stream.  Then call Read() on that <c>DeflateStream</c>, and the data read
+               will be decompressed as you read.
+             </para>
+            
+             <para>
+               A <c>DeflateStream</c> can be used for <c>Read()</c> or <c>Write()</c>, but not both.
+             </para>
+            
+             </remarks>
+             <param name="buffer">The buffer into which the read data should be placed.</param>
+             <param name="offset">the offset within that data array to put the first byte read.</param>
+             <param name="count">the number of bytes to read.</param>
+             <returns>the number of bytes actually read</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Calling this method always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+            <param name="offset">this is irrelevant, since it will always throw!</param>
+            <param name="origin">this is irrelevant, since it will always throw!</param>
+            <returns>irrelevant!</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateStream.SetLength(System.Int64)">
+            <summary>
+            Calling this method always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+            <param name="value">this is irrelevant, since it will always throw!</param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+               Write data to the stream.
+             </summary>
+             <remarks>
+            
+             <para>
+               If you wish to use the <c>DeflateStream</c> to compress data while
+               writing, you can create a <c>DeflateStream</c> with
+               <c>CompressionMode.Compress</c>, and a writable output stream.  Then call
+               <c>Write()</c> on that <c>DeflateStream</c>, providing uncompressed data
+               as input.  The data sent to the output stream will be the compressed form
+               of the data written.  If you wish to use the <c>DeflateStream</c> to
+               decompress data while writing, you can create a <c>DeflateStream</c> with
+               <c>CompressionMode.Decompress</c>, and a writable output stream.  Then
+               call <c>Write()</c> on that stream, providing previously compressed
+               data. The data sent to the output stream will be the decompressed form of
+               the data written.
+             </para>
+            
+             <para>
+               A <c>DeflateStream</c> can be used for <c>Read()</c> or <c>Write()</c>,
+               but not both.
+             </para>
+            
+             </remarks>
+            
+             <param name="buffer">The buffer holding data to write to the stream.</param>
+             <param name="offset">the offset within that data array to find the first byte to write.</param>
+             <param name="count">the number of bytes to write.</param>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.FlushType">
+            <summary>
+            Describes how to flush the current deflate operation. 
+            </summary>
+            <remarks>
+            The different FlushType values are useful when using a Deflate in a streaming application.
+            </remarks>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.FlushType.None">
+            <summary>No flush at all.</summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.FlushType.Partial">
+            <summary>Closes the current block, but doesn't flush it to
+            the output. Used internally only in hypothetical
+            scenarios.  This was supposed to be removed by Zlib, but it is
+            still in use in some edge cases. 
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.FlushType.Sync">
+            <summary>
+            Use this during compression to specify that all pending output should be
+            flushed to the output buffer and the output should be aligned on a byte
+            boundary.  You might use this in a streaming communication scenario, so that
+            the decompressor can get all input data available so far.  When using this
+            with a ZlibCodec, <c>AvailableBytesIn</c> will be zero after the call if
+            enough output space has been provided before the call.  Flushing will
+            degrade compression and so it should be used only when necessary.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.FlushType.Full">
+            <summary>
+            Use this during compression to specify that all output should be flushed, as
+            with <c>FlushType.Sync</c>, but also, the compression state should be reset
+            so that decompression can restart from this point if previous compressed
+            data has been damaged or if random access is desired.  Using
+            <c>FlushType.Full</c> too often can significantly degrade the compression.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.FlushType.Finish">
+            <summary>Signals the end of the compression/decompression stream.</summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.GZipStream.CanRead">
+            <summary>
+            Indicates whether the stream can be read.
+            </summary>
+            <remarks>
+            The return value depends on whether the captive stream supports reading.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.GZipStream.CanSeek">
+            <summary>
+            Indicates whether the stream supports Seek operations.
+            </summary>
+            <remarks>
+            Always returns false.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.GZipStream.CanWrite">
+            <summary>
+            Indicates whether the stream can be written.
+            </summary>
+            <remarks>
+            The return value depends on whether the captive stream supports writing.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.GZipStream.Length">
+            <summary>
+            Reading this property always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.GZipStream.Position">
+             <summary>
+               The position of the stream pointer.
+             </summary>
+            
+             <remarks>
+               Setting this property always throws a <see
+               cref="T:System.NotImplementedException"/>. Reading will return the total bytes
+               written out, if used in writing, or the total bytes read in, if used in
+               reading.  The count may refer to compressed bytes or uncompressed bytes,
+               depending on how you've used the stream.
+             </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.GZipStream.Dispose(System.Boolean)">
+            <summary>
+            Dispose the stream.
+            </summary>
+            <remarks>
+            This may or may not result in a <c>Close()</c> call on the captive stream.
+            See the doc on constructors that take a <c>leaveOpen</c> parameter for more information.
+            </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.GZipStream.Flush">
+            <summary>
+            Flush the stream.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.GZipStream.Read(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+               Read and decompress data from the source stream.
+             </summary>
+            
+             <remarks>
+               With a <c>GZipStream</c>, decompression is done through reading.
+             </remarks>
+            
+             <example>
+             <code>
+             byte[] working = new byte[WORKING_BUFFER_SIZE];
+             using (System.IO.Stream input = System.IO.File.OpenRead(_CompressedFile))
+             {
+                 using (Stream decompressor= new Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, true))
+                 {
+                     using (var output = System.IO.File.Create(_DecompressedFile))
+                     {
+                         int n;
+                         while ((n= decompressor.Read(working, 0, working.Length)) !=0)
+                         {
+                             output.Write(working, 0, n);
+                         }
+                     }
+                 }
+             }
+             </code>
+             </example>
+             <param name="buffer">The buffer into which the decompressed data should be placed.</param>
+             <param name="offset">the offset within that data array to put the first byte read.</param>
+             <param name="count">the number of bytes to read.</param>
+             <returns>the number of bytes actually read</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.GZipStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+              Calling this method always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+            <param name="offset">irrelevant; it will always throw!</param>
+            <param name="origin">irrelevant; it will always throw!</param>
+            <returns>irrelevant!</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.GZipStream.SetLength(System.Int64)">
+            <summary>
+              Calling this method always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+            <param name="value">irrelevant; this method will always throw!</param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.GZipStream.Write(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+               Write data to the stream.
+             </summary>
+            
+             <remarks>
+             <para>
+               If you wish to use the <c>GZipStream</c> to compress data while writing,
+               you can create a <c>GZipStream</c> with <c>CompressionMode.Compress</c>, and a
+               writable output stream.  Then call <c>Write()</c> on that <c>GZipStream</c>,
+               providing uncompressed data as input.  The data sent to the output stream
+               will be the compressed form of the data written.
+             </para>
+            
+             <para>
+               A <c>GZipStream</c> can be used for <c>Read()</c> or <c>Write()</c>, but not
+               both. Writing implies compression.  Reading implies decompression.
+             </para>
+            
+             </remarks>
+             <param name="buffer">The buffer holding data to write to the stream.</param>
+             <param name="offset">the offset within that data array to find the first byte to write.</param>
+             <param name="count">the number of bytes to write.</param>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.CompressionStrategy">
+            <summary>
+            Describes options for how the compression algorithm is executed.  Different strategies
+            work better on different sorts of data.  The strategy parameter can affect the compression
+            ratio and the speed of compression but not the correctness of the compresssion.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.CompressionStrategy.Default">
+            <summary>
+            The default strategy is probably the best for normal data. 
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.CompressionStrategy.Filtered">
+            <summary>
+            The <c>Filtered</c> strategy is intended to be used most effectively with data produced by a
+            filter or predictor.  By this definition, filtered data consists mostly of small
+            values with a somewhat random distribution.  In this case, the compression algorithm
+            is tuned to compress them better.  The effect of <c>Filtered</c> is to force more Huffman
+            coding and less string matching; it is a half-step between <c>Default</c> and <c>HuffmanOnly</c>.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.CompressionStrategy.HuffmanOnly">
+            <summary>
+            Using <c>HuffmanOnly</c> will force the compressor to do Huffman encoding only, with no
+            string matching.
+            </summary>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.ZlibException">
+            <summary>
+            A general purpose exception class for exceptions in the Zlib library.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibException.#ctor">
+            <summary>
+            The ZlibException class captures exception information generated
+            by the Zlib library. 
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibException.#ctor(System.String)">
+            <summary>
+            This ctor collects a message attached to the exception.
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.SharedUtils.URShift(System.Int32,System.Int32)">
+            <summary>
+            Performs an unsigned bitwise right shift with the specified number
+            </summary>
+            <param name="number">Number to operate on</param>
+            <param name="bits">Ammount of bits to shift</param>
+            <returns>The resulting number from the shift operation</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.SharedUtils.ReadInput(System.IO.TextReader,System.Byte[],System.Int32,System.Int32)">
+             <summary>
+               Reads a number of characters from the current source TextReader and writes
+               the data to the target array at the specified index.
+             </summary>
+            
+             <param name="sourceTextReader">The source TextReader to read from</param>
+             <param name="target">Contains the array of characteres read from the source TextReader.</param>
+             <param name="start">The starting index of the target array.</param>
+             <param name="count">The maximum number of characters to read from the source TextReader.</param>
+             
+             <returns>
+               The number of characters read. The number will be less than or equal to
+               count depending on the data available in the source TextReader. Returns -1
+               if the end of the stream is reached.
+             </returns>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.Adler">
+            <summary>
+            Computes an Adler-32 checksum. 
+            </summary>
+            <remarks>
+            The Adler checksum is similar to a CRC checksum, but faster to compute, though less
+            reliable.  It is used in producing RFC1950 compressed streams.  The Adler checksum
+            is a required part of the "ZLIB" standard.  Applications will almost never need to
+            use this class directly.
+            </remarks>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.ZlibCodec">
+             <summary>
+             Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).
+             </summary>
+            
+             <remarks>
+             This class compresses and decompresses data according to the Deflate algorithm
+             and optionally, the ZLIB format, as documented in <see
+             href="http://www.ietf.org/rfc/rfc1950.txt">RFC 1950 - ZLIB</see> and <see
+             href="http://www.ietf.org/rfc/rfc1951.txt">RFC 1951 - DEFLATE</see>.
+             </remarks>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.InputBuffer">
+            <summary>
+            The buffer from which data is taken.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.NextIn">
+            <summary>
+            An index into the InputBuffer array, indicating where to start reading. 
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.AvailableBytesIn">
+            <summary>
+            The number of bytes available in the InputBuffer, starting at NextIn. 
+            </summary>
+            <remarks>
+            Generally you should set this to InputBuffer.Length before the first Inflate() or Deflate() call. 
+            The class will update this number as calls to Inflate/Deflate are made.
+            </remarks>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.TotalBytesIn">
+            <summary>
+            Total number of bytes read so far, through all calls to Inflate()/Deflate().
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.OutputBuffer">
+            <summary>
+            Buffer to store output data.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.NextOut">
+            <summary>
+            An index into the OutputBuffer array, indicating where to start writing. 
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.AvailableBytesOut">
+            <summary>
+            The number of bytes available in the OutputBuffer, starting at NextOut. 
+            </summary>
+            <remarks>
+            Generally you should set this to OutputBuffer.Length before the first Inflate() or Deflate() call. 
+            The class will update this number as calls to Inflate/Deflate are made.
+            </remarks>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.TotalBytesOut">
+            <summary>
+            Total number of bytes written to the output so far, through all calls to Inflate()/Deflate().
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.Message">
+            <summary>
+            used for diagnostics, when something goes wrong!
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.CompressLevel">
+            <summary>
+            The compression level to use in this codec.  Useful only in compression mode.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.WindowBits">
+            <summary>
+            The number of Window Bits to use.  
+            </summary>
+            <remarks>
+            This gauges the size of the sliding window, and hence the 
+            compression effectiveness as well as memory consumption. It's best to just leave this 
+            setting alone if you don't know what it is.  The maximum value is 15 bits, which implies
+            a 32k window.  
+            </remarks>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibCodec.Strategy">
+            <summary>
+            The compression strategy to use.
+            </summary>
+            <remarks>
+            This is only effective in compression.  The theory offered by ZLIB is that different
+            strategies could potentially produce significant differences in compression behavior
+            for different data sets.  Unfortunately I don't have any good recommendations for how
+            to set it differently.  When I tested changing the strategy I got minimally different
+            compression performance. It's best to leave this property alone if you don't have a
+            good feel for it.  Or, you may want to produce a test harness that runs through the
+            different strategy options and evaluates them on different file types. If you do that,
+            let me know your results.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibCodec.Adler32">
+            <summary>
+            The Adler32 checksum on the data transferred through the codec so far. You probably don't need to look at this.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.#ctor">
+            <summary>
+            Create a ZlibCodec.
+            </summary>
+            <remarks>
+            If you use this default constructor, you will later have to explicitly call 
+            InitializeInflate() or InitializeDeflate() before using the ZlibCodec to compress 
+            or decompress. 
+            </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.#ctor(System.IO.Compression.CompressionMode)">
+            <summary>
+            Create a ZlibCodec that either compresses or decompresses.
+            </summary>
+            <param name="mode">
+            Indicates whether the codec should compress (deflate) or decompress (inflate).
+            </param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeInflate">
+            <summary>
+            Initialize the inflation state. 
+            </summary>
+            <remarks>
+            It is not necessary to call this before using the ZlibCodec to inflate data; 
+            It is implicitly called when you call the constructor.
+            </remarks>
+            <returns>Z_OK if everything goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeInflate(System.Boolean)">
+             <summary>
+             Initialize the inflation state with an explicit flag to
+             govern the handling of RFC1950 header bytes.
+             </summary>
+            
+             <remarks>
+             By default, the ZLIB header defined in <see
+             href="http://www.ietf.org/rfc/rfc1950.txt">RFC 1950</see> is expected.  If
+             you want to read a zlib stream you should specify true for
+             expectRfc1950Header.  If you have a deflate stream, you will want to specify
+             false. It is only necessary to invoke this initializer explicitly if you
+             want to specify false.
+             </remarks>
+            
+             <param name="expectRfc1950Header">whether to expect an RFC1950 header byte
+             pair when reading the stream of data to be inflated.</param>
+            
+             <returns>Z_OK if everything goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeInflate(System.Int32)">
+            <summary>
+            Initialize the ZlibCodec for inflation, with the specified number of window bits. 
+            </summary>
+            <param name="windowBits">The number of window bits to use. If you need to ask what that is, 
+            then you shouldn't be calling this initializer.</param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeInflate(System.Int32,System.Boolean)">
+             <summary>
+             Initialize the inflation state with an explicit flag to govern the handling of
+             RFC1950 header bytes. 
+             </summary>
+            
+             <remarks>
+             If you want to read a zlib stream you should specify true for
+             expectRfc1950Header. In this case, the library will expect to find a ZLIB
+             header, as defined in <see href="http://www.ietf.org/rfc/rfc1950.txt">RFC
+             1950</see>, in the compressed stream.  If you will be reading a DEFLATE or
+             GZIP stream, which does not have such a header, you will want to specify
+             false.
+             </remarks>
+            
+             <param name="expectRfc1950Header">whether to expect an RFC1950 header byte pair when reading 
+             the stream of data to be inflated.</param>
+             <param name="windowBits">The number of window bits to use. If you need to ask what that is, 
+             then you shouldn't be calling this initializer.</param>
+             <returns>Z_OK if everything goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.Inflate(SharpCompress.Compressors.Deflate.FlushType)">
+             <summary>
+             Inflate the data in the InputBuffer, placing the result in the OutputBuffer.
+             </summary>
+             <remarks>
+             You must have set InputBuffer and OutputBuffer, NextIn and NextOut, and AvailableBytesIn and 
+             AvailableBytesOut  before calling this method.
+             </remarks>
+             <example>
+             <code>
+             private void InflateBuffer()
+             {
+                 int bufferSize = 1024;
+                 byte[] buffer = new byte[bufferSize];
+                 ZlibCodec decompressor = new ZlibCodec();
+             
+                 Console.WriteLine("\n============================================");
+                 Console.WriteLine("Size of Buffer to Inflate: {0} bytes.", CompressedBytes.Length);
+                 MemoryStream ms = new MemoryStream(DecompressedBytes);
+             
+                 int rc = decompressor.InitializeInflate();
+             
+                 decompressor.InputBuffer = CompressedBytes;
+                 decompressor.NextIn = 0;
+                 decompressor.AvailableBytesIn = CompressedBytes.Length;
+             
+                 decompressor.OutputBuffer = buffer;
+             
+                 // pass 1: inflate 
+                 do
+                 {
+                     decompressor.NextOut = 0;
+                     decompressor.AvailableBytesOut = buffer.Length;
+                     rc = decompressor.Inflate(FlushType.None);
+             
+                     if (rc != ZlibConstants.Z_OK &amp;&amp; rc != ZlibConstants.Z_STREAM_END)
+                         throw new Exception("inflating: " + decompressor.Message);
+             
+                     ms.Write(decompressor.OutputBuffer, 0, buffer.Length - decompressor.AvailableBytesOut);
+                 }
+                 while (decompressor.AvailableBytesIn &gt; 0 || decompressor.AvailableBytesOut == 0);
+             
+                 // pass 2: finish and flush
+                 do
+                 {
+                     decompressor.NextOut = 0;
+                     decompressor.AvailableBytesOut = buffer.Length;
+                     rc = decompressor.Inflate(FlushType.Finish);
+             
+                     if (rc != ZlibConstants.Z_STREAM_END &amp;&amp; rc != ZlibConstants.Z_OK)
+                         throw new Exception("inflating: " + decompressor.Message);
+             
+                     if (buffer.Length - decompressor.AvailableBytesOut &gt; 0)
+                         ms.Write(buffer, 0, buffer.Length - decompressor.AvailableBytesOut);
+                 }
+                 while (decompressor.AvailableBytesIn &gt; 0 || decompressor.AvailableBytesOut == 0);
+             
+                 decompressor.EndInflate();
+             }
+            
+             </code>
+             </example>
+             <param name="flush">The flush to use when inflating.</param>
+             <returns>Z_OK if everything goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.EndInflate">
+            <summary>
+            Ends an inflation session. 
+            </summary>
+            <remarks>
+            Call this after successively calling Inflate().  This will cause all buffers to be flushed. 
+            After calling this you cannot call Inflate() without a intervening call to one of the
+            InitializeInflate() overloads.
+            </remarks>
+            <returns>Z_OK if everything goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.SyncInflate">
+            <summary>
+            I don't know what this does!
+            </summary>
+            <returns>Z_OK if everything goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeDeflate">
+            <summary>
+            Initialize the ZlibCodec for deflation operation.
+            </summary>
+            <remarks>
+            The codec will use the MAX window bits and the default level of compression.
+            </remarks>
+            <example>
+            <code>
+             int bufferSize = 40000;
+             byte[] CompressedBytes = new byte[bufferSize];
+             byte[] DecompressedBytes = new byte[bufferSize];
+             
+             ZlibCodec compressor = new ZlibCodec();
+             
+             compressor.InitializeDeflate(CompressionLevel.Default);
+             
+             compressor.InputBuffer = System.Text.ASCIIEncoding.ASCII.GetBytes(TextToCompress);
+             compressor.NextIn = 0;
+             compressor.AvailableBytesIn = compressor.InputBuffer.Length;
+             
+             compressor.OutputBuffer = CompressedBytes;
+             compressor.NextOut = 0;
+             compressor.AvailableBytesOut = CompressedBytes.Length;
+             
+             while (compressor.TotalBytesIn != TextToCompress.Length &amp;&amp; compressor.TotalBytesOut &lt; bufferSize)
+             {
+               compressor.Deflate(FlushType.None);
+             }
+             
+             while (true)
+             {
+               int rc= compressor.Deflate(FlushType.Finish);
+               if (rc == ZlibConstants.Z_STREAM_END) break;
+             }
+             
+             compressor.EndDeflate();
+              
+            </code>
+            </example>
+            <returns>Z_OK if all goes well. You generally don't need to check the return code.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeDeflate(Leayal.Closers.CMF.CompressionLevel)">
+            <summary>
+            Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel.
+            </summary>
+            <remarks>
+            The codec will use the maximum window bits (15) and the specified
+            CompressionLevel.  It will emit a ZLIB stream as it compresses.
+            </remarks>
+            <param name="level">The compression level for the codec.</param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeDeflate(Leayal.Closers.CMF.CompressionLevel,System.Boolean)">
+            <summary>
+            Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel, 
+            and the explicit flag governing whether to emit an RFC1950 header byte pair.
+            </summary>
+            <remarks>
+            The codec will use the maximum window bits (15) and the specified CompressionLevel.
+            If you want to generate a zlib stream, you should specify true for
+            wantRfc1950Header. In this case, the library will emit a ZLIB
+            header, as defined in <see href="http://www.ietf.org/rfc/rfc1950.txt">RFC
+            1950</see>, in the compressed stream.  
+            </remarks>
+            <param name="level">The compression level for the codec.</param>
+            <param name="wantRfc1950Header">whether to emit an initial RFC1950 byte pair in the compressed stream.</param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeDeflate(Leayal.Closers.CMF.CompressionLevel,System.Int32)">
+            <summary>
+            Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel, 
+            and the specified number of window bits. 
+            </summary>
+            <remarks>
+            The codec will use the specified number of window bits and the specified CompressionLevel.
+            </remarks>
+            <param name="level">The compression level for the codec.</param>
+            <param name="bits">the number of window bits to use.  If you don't know what this means, don't use this method.</param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.InitializeDeflate(Leayal.Closers.CMF.CompressionLevel,System.Int32,System.Boolean)">
+             <summary>
+             Initialize the ZlibCodec for deflation operation, using the specified
+             CompressionLevel, the specified number of window bits, and the explicit flag
+             governing whether to emit an RFC1950 header byte pair.
+             </summary>
+            
+             <param name="level">The compression level for the codec.</param>
+             <param name="wantRfc1950Header">whether to emit an initial RFC1950 byte pair in the compressed stream.</param>
+             <param name="bits">the number of window bits to use.  If you don't know what this means, don't use this method.</param>
+             <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.Deflate(SharpCompress.Compressors.Deflate.FlushType)">
+            <summary>
+            Deflate one batch of data.
+            </summary>
+            <remarks>
+            You must have set InputBuffer and OutputBuffer before calling this method.
+            </remarks>
+            <example>
+            <code>
+            private void DeflateBuffer(CompressionLevel level)
+            {
+                int bufferSize = 1024;
+                byte[] buffer = new byte[bufferSize];
+                ZlibCodec compressor = new ZlibCodec();
+            
+                Console.WriteLine("\n============================================");
+                Console.WriteLine("Size of Buffer to Deflate: {0} bytes.", UncompressedBytes.Length);
+                MemoryStream ms = new MemoryStream();
+            
+                int rc = compressor.InitializeDeflate(level);
+            
+                compressor.InputBuffer = UncompressedBytes;
+                compressor.NextIn = 0;
+                compressor.AvailableBytesIn = UncompressedBytes.Length;
+            
+                compressor.OutputBuffer = buffer;
+            
+                // pass 1: deflate 
+                do
+                {
+                    compressor.NextOut = 0;
+                    compressor.AvailableBytesOut = buffer.Length;
+                    rc = compressor.Deflate(FlushType.None);
+            
+                    if (rc != ZlibConstants.Z_OK &amp;&amp; rc != ZlibConstants.Z_STREAM_END)
+                        throw new Exception("deflating: " + compressor.Message);
+            
+                    ms.Write(compressor.OutputBuffer, 0, buffer.Length - compressor.AvailableBytesOut);
+                }
+                while (compressor.AvailableBytesIn &gt; 0 || compressor.AvailableBytesOut == 0);
+            
+                // pass 2: finish and flush
+                do
+                {
+                    compressor.NextOut = 0;
+                    compressor.AvailableBytesOut = buffer.Length;
+                    rc = compressor.Deflate(FlushType.Finish);
+            
+                    if (rc != ZlibConstants.Z_STREAM_END &amp;&amp; rc != ZlibConstants.Z_OK)
+                        throw new Exception("deflating: " + compressor.Message);
+            
+                    if (buffer.Length - compressor.AvailableBytesOut &gt; 0)
+                        ms.Write(buffer, 0, buffer.Length - compressor.AvailableBytesOut);
+                }
+                while (compressor.AvailableBytesIn &gt; 0 || compressor.AvailableBytesOut == 0);
+            
+                compressor.EndDeflate();
+            
+                ms.Seek(0, SeekOrigin.Begin);
+                CompressedBytes = new byte[compressor.TotalBytesOut];
+                ms.Read(CompressedBytes, 0, CompressedBytes.Length);
+            }
+            </code>
+            </example>
+            <param name="flush">whether to flush all data as you deflate. Generally you will want to 
+            use Z_NO_FLUSH here, in a series of calls to Deflate(), and then call EndDeflate() to 
+            flush everything. 
+            </param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.EndDeflate">
+            <summary>
+            End a deflation session.
+            </summary>
+            <remarks>
+            Call this after making a series of one or more calls to Deflate(). All buffers are flushed.
+            </remarks>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.ResetDeflate">
+            <summary>
+            Reset a codec for another deflation session.
+            </summary>
+            <remarks>
+            Call this to reset the deflation state.  For example if a thread is deflating
+            non-consecutive blocks, you can call Reset() after the Deflate(Sync) of the first
+            block and before the next Deflate(None) of the second block.
+            </remarks>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.SetDeflateParams(Leayal.Closers.CMF.CompressionLevel,SharpCompress.Compressors.Deflate.CompressionStrategy)">
+            <summary>
+            Set the CompressionStrategy and CompressionLevel for a deflation session.
+            </summary>
+            <param name="level">the level of compression to use.</param>
+            <param name="strategy">the strategy to use for compression.</param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibCodec.SetDictionary(System.Byte[])">
+            <summary>
+            Set the dictionary to be used for either Inflation or Deflation.
+            </summary>
+            <param name="dictionary">The dictionary bytes to use.</param>
+            <returns>Z_OK if all goes well.</returns>
+        </member>
+        <member name="T:SharpCompress.Compressors.Deflate.ZlibConstants">
+            <summary>
+            A bunch of constants used in the Zlib interface.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.WindowBitsMax">
+            <summary>
+            The maximum number of window bits for the Deflate algorithm.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.WindowBitsDefault">
+            <summary>
+            The default number of window bits for the Deflate algorithm.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.Z_OK">
+            <summary>
+            indicates everything is A-OK
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.Z_STREAM_END">
+            <summary>
+            Indicates that the last operation reached the end of the stream.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.Z_NEED_DICT">
+            <summary>
+            The operation ended in need of a dictionary. 
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.Z_STREAM_ERROR">
+            <summary>
+            There was an error with the stream - not enough data, not open and readable, etc.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.Z_DATA_ERROR">
+            <summary>
+            There was an error with the data - not enough data, bad data, etc.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.Z_BUF_ERROR">
+            <summary>
+            There was an error with the working buffer.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.WorkingBufferSizeDefault">
+            <summary>
+            The size of the working buffer used in the ZlibCodec class. Defaults to 8192 bytes.
+            </summary>
+        </member>
+        <member name="F:SharpCompress.Compressors.Deflate.ZlibConstants.WorkingBufferSizeMin">
+            <summary>
+            The minimum size of the working buffer used in the ZlibCodec class.  Currently it is 128 bytes.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.FlushMode">
+            <summary>
+            This property sets the flush behavior on the stream.
+            Sorry, though, not sure exactly how to describe all the various settings.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.BufferSize">
+             <summary>
+               The size of the working buffer for the compression codec.
+             </summary>
+            
+             <remarks>
+             <para>
+               The working buffer is used for all stream operations.  The default size is
+               1024 bytes. The minimum size is 128 bytes. You may get better performance
+               with a larger buffer.  Then again, you might not.  You would have to test
+               it.
+             </para>
+            
+             <para>
+               Set this before the first call to <c>Read()</c> or <c>Write()</c> on the
+               stream. If you try to set it afterwards, it will throw.
+             </para>
+             </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.TotalIn">
+            <summary> Returns the total number of bytes input so far.</summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.TotalOut">
+            <summary> Returns the total number of bytes output so far.</summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.CanRead">
+            <summary>
+            Indicates whether the stream can be read.
+            </summary>
+            <remarks>
+            The return value depends on whether the captive stream supports reading.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.CanSeek">
+            <summary>
+            Indicates whether the stream supports Seek operations.
+            </summary>
+            <remarks>
+            Always returns false.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.CanWrite">
+            <summary>
+            Indicates whether the stream can be written.
+            </summary>
+            <remarks>
+            The return value depends on whether the captive stream supports writing.
+            </remarks>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.Length">
+            <summary>
+            Reading this property always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+        </member>
+        <member name="P:SharpCompress.Compressors.Deflate.ZlibStream.Position">
+             <summary>
+               The position of the stream pointer.
+             </summary>
+            
+             <remarks>
+               Setting this property always throws a <see
+               cref="T:System.NotImplementedException"/>. Reading will return the total bytes
+               written out, if used in writing, or the total bytes read in, if used in
+               reading.  The count may refer to compressed bytes or uncompressed bytes,
+               depending on how you've used the stream.
+             </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibStream.Dispose(System.Boolean)">
+            <summary>
+            Dispose the stream.
+            </summary>
+            <remarks>
+            This may or may not result in a <c>Close()</c> call on the captive stream.
+            See the constructors that have a  <c>leaveOpen</c> parameter for more information.
+            </remarks>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibStream.Flush">
+            <summary>
+            Flush the stream.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibStream.Read(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+             Read data from the stream.
+             </summary>
+            
+             <remarks>
+            
+             <para>
+               If you wish to use the <c>ZlibStream</c> to compress data while reading,
+               you can create a <c>ZlibStream</c> with <c>CompressionMode.Compress</c>,
+               providing an uncompressed data stream.  Then call <c>Read()</c> on that
+               <c>ZlibStream</c>, and the data read will be compressed.  If you wish to
+               use the <c>ZlibStream</c> to decompress data while reading, you can create
+               a <c>ZlibStream</c> with <c>CompressionMode.Decompress</c>, providing a
+               readable compressed data stream.  Then call <c>Read()</c> on that
+               <c>ZlibStream</c>, and the data will be decompressed as it is read.
+             </para>
+            
+             <para>
+               A <c>ZlibStream</c> can be used for <c>Read()</c> or <c>Write()</c>, but
+               not both.
+             </para>
+            
+             </remarks>
+             <param name="buffer">The buffer into which the read data should be placed.</param>
+             <param name="offset">the offset within that data array to put the first byte read.</param>
+             <param name="count">the number of bytes to read.</param>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Calling this method always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibStream.SetLength(System.Int64)">
+            <summary>
+            Calling this method always throws a <see cref="T:System.NotImplementedException"/>.
+            </summary>
+        </member>
+        <member name="M:SharpCompress.Compressors.Deflate.ZlibStream.Write(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+             Write data to the stream.
+             </summary>
+            
+             <remarks>
+            
+             <para>
+               If you wish to use the <c>ZlibStream</c> to compress data while writing,
+               you can create a <c>ZlibStream</c> with <c>CompressionMode.Compress</c>,
+               and a writable output stream.  Then call <c>Write()</c> on that
+               <c>ZlibStream</c>, providing uncompressed data as input.  The data sent to
+               the output stream will be the compressed form of the data written.  If you
+               wish to use the <c>ZlibStream</c> to decompress data while writing, you
+               can create a <c>ZlibStream</c> with <c>CompressionMode.Decompress</c>, and a
+               writable output stream.  Then call <c>Write()</c> on that stream,
+               providing previously compressed data. The data sent to the output stream
+               will be the decompressed form of the data written.
+             </para>
+            
+             <para>
+               A <c>ZlibStream</c> can be used for <c>Read()</c> or <c>Write()</c>, but not both.
+             </para>
+             </remarks>
+             <param name="buffer">The buffer holding data to write to the stream.</param>
+             <param name="offset">the offset within that data array to find the first byte to write.</param>
+             <param name="count">the number of bytes to write.</param>
+        </member>
+    </members>
+</doc>
