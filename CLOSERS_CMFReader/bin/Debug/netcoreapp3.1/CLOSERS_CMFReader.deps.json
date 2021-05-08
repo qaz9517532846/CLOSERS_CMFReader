@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CLOSERS_CMFReader/1.0.0": {
+        "dependencies": {
+          "CMF-Sharp": "1.0.0"
+        },
+        "runtime": {
+          "CLOSERS_CMFReader.dll": {}
+        }
+      },
+      "CMF-Sharp/1.0.0": {
+        "runtime": {
+          "CMF-Sharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CLOSERS_CMFReader/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CMF-Sharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
